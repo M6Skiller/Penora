@@ -23,4 +23,6 @@ db_config = {
     'database': db_name
 }
 
+token = '7560056853:AAEoxDm46KLkkxKBpcdClsSAkFtNi028xPc'
+
 admins = [229697988]

@@ -4,7 +4,7 @@ from Config import *
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-bot = telebot.TeleBot('7560056853:AAEoxDm46KLkkxKBpcdClsSAkFtNi028xPc')
+bot = telebot.TeleBot(token)
 
 import logging
 
