@@ -5,7 +5,7 @@ API_TOKEN = os.getenv('TOKEN')
 if API_TOKEN is None:
     print("You don't have token for your bot ❌")
 
-database_url = os.getenv('DATABASE_URL')
+database_url = os.getenv('Database_id')
 if database_url is None:
     print("DATABASE_URL is not set!")
 
