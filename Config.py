@@ -19,5 +19,5 @@ db_config = {
     'password': result.password,
     'host': result.hostname,
     'port': result.port,
-    'database': db_name['database']
+    'database': result.path.lstrip('/')
 }
