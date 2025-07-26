@@ -1,18 +1,15 @@
 import os
 from urllib.parse import urlparse
 
-database_url = os.getenv('DATABASE_URL')
-
-result = urlparse(database_url)
-
-if os.getenv('TOKEN') is not None:
-    API_TOKEN = os.environ.get('TOKEN')
-else:
+API_TOKEN = os.getenv('TOKEN')
+if API_TOKEN is None:
     print("You don't have token for your bot ❌")
 
-admins = [229697988]
+database_url = os.getenv('DATABASE_URL')
+if database_url is None:
+    print("DATABASE_URL is not set!")
 
-db_name = os.environ.get('database' , 'Store')
+result = urlparse(database_url)
 
 db_config = {
     'user': result.username,
@@ -21,3 +18,5 @@ db_config = {
     'port': result.port,
     'database': result.path.lstrip('/')
 }
+
+admins = [229697988]
