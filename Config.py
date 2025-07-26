@@ -1,4 +1,9 @@
 import os
+from urllib.parse import urlparse
+
+database_url = os.getenv('DATABASE_URL')
+
+result = urlparse(database_url)
 
 if os.getenv('TOKEN') is not None:
     API_TOKEN = os.environ.get('TOKEN')
@@ -9,9 +14,10 @@ admins = [229697988]
 
 db_name = os.environ.get('database' , 'Store')
 
-config = {
-    'user' : os.environ.get('user' , 'root'),
-    'password' : os.environ.get('password' , 'password'),
-    'host' : os.environ.get('host' , 'localhost'),
-    'database' : db_name
+db_config = {
+    'user': result.username,
+    'password': result.password,
+    'host': result.hostname,
+    'port': result.port,
+    'database': db_name['database']
 }
